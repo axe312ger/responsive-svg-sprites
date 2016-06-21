@@ -1,0 +1,42 @@
+// Function that returns the aspect ratio for a specific icon.
+@function svg-icon-aspect-ratio($name) {
+  @if map-has-key($svg-icon-map, $name) {
+    @return map-get($svg-icon-map, $name);
+  }
+  @else {
+    @error "The icon `#{$name}` does not exist in your svg sprite";
+  }
+}
+
+// Mixin to get the correct svg dimension based on a given height.
+@mixin svg-icon-dimensions-by-height($name, $height) {
+  height: $height;
+  width: $height * svg-icon-aspect-ratio($name);
+}
+
+// Mixin to get the correct svg dimension based on a given height.
+// Has to be applied to the wrapper of the svg.
+//
+// IMPORTANT: It will transform the dimensions, use a wrapper div to ensure
+// block context 
+@mixin svg-icon-responsive-wrapper($name) {
+  $gap: 100 / svg-icon-aspect-ratio($name);
+  position: relative;
+
+  // Filler representing the svg aspect ratio.
+  &:before {
+    content: '';
+    display: block;
+  	height: 0;
+  	padding-bottom: #{$gap + "%"};
+  }
+
+	// Align the svg to the new boundaries.
+	> svg {
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+	}
+}
