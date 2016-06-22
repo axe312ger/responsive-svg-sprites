@@ -2,6 +2,7 @@ const gulp = require('gulp')
 const path = require('path')
 const svgSprite = require('gulp-svg-sprite')
 const sass = require('gulp-sass')
+const ghPages = require('gulp-gh-pages')
 
 const svgSpriteConfig = {
   // Note: dist is skipped for gulp svg sprite, thats why its missing here.
@@ -92,4 +93,8 @@ gulp.task('stylesheets', ['sprite'], () => gulp.src(path.join('templates', 'exam
 gulp.task('sprite', () => gulp.src(path.join('icons', '**', '*.svg'))
   .pipe(svgSprite(svgSpriteConfig))
   .pipe(gulp.dest('sprite'))
+)
+
+gulp.task('deploy', ['generate'], () => gulp.src('sprite/*.{html,css,svg}')
+  .pipe(ghPages())
 )

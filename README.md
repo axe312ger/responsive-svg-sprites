@@ -14,7 +14,7 @@ responsive-svg-sprites
 * [ ] add responsive methods to example
 * [ ] add proper ie polyfill to example
 * [ ] do cross browsers testing to proof this
-* [ ] create autopublish to github pages
+* [x] create autopublish to github pages
 * [ ] EXTRA: add animations & colorings to the icons
 * [ ] EXTRA: postcss (just simply cssnext?) version
 
