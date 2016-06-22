@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta charset="utf-8"/>
+		<meta http-equiv="X-UA-Compatible" content="IE=Edge"/>
+		<title>Responsive svg sprites with svg-sprite and SVGO</title>
+		<link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/4.1.1/normalize.min.css" type="text/css" rel="stylesheet"/>
+		<link href="example.css" type="text/css" rel="stylesheet"/>
+	</head>
+	<body>
+		<h1>Responsive svg sprites</h1>
+
+		<ul>
+			<li>Red dashed border: SVG dimensions</li>
+			<li>Green dotted border: Wrapping div dimensions</li>
+		</ul>
+
+		<h2>Example #1 - 50px fixed height</h2>
+
+		<div class="first-example">
+				<div class="icon-wrapper">
+					<svg class="svg-icon-aeropress">
+						<use xlink:href="icons.svg#aeropress"></use>
+					</svg>
+				</div>
+				<div class="icon-wrapper">
+					<svg class="svg-icon-americano">
+						<use xlink:href="icons.svg#americano"></use>
+					</svg>
+				</div>
+				<div class="icon-wrapper">
+					<svg class="svg-icon-coffee-grinder">
+						<use xlink:href="icons.svg#coffee-grinder"></use>
+					</svg>
+				</div>
+				<div class="icon-wrapper">
+					<svg class="svg-icon-espresso-machine">
+						<use xlink:href="icons.svg#espresso-machine"></use>
+					</svg>
+				</div>
+				<div class="icon-wrapper">
+					<svg class="svg-icon-portafilter">
+						<use xlink:href="icons.svg#portafilter"></use>
+					</svg>
+				</div>
+		</div>
+
+		<h2>Example #2 - 100px fixed height</h2>
+
+		<div class="second-example">
+				<div class="icon-wrapper">
+					<svg class="svg-icon-aeropress">
+						<use xlink:href="icons.svg#aeropress"></use>
+					</svg>
+				</div>
+				<div class="icon-wrapper">
+					<svg class="svg-icon-americano">
+						<use xlink:href="icons.svg#americano"></use>
+					</svg>
+				</div>
+				<div class="icon-wrapper">
+					<svg class="svg-icon-coffee-grinder">
+						<use xlink:href="icons.svg#coffee-grinder"></use>
+					</svg>
+				</div>
+				<div class="icon-wrapper">
+					<svg class="svg-icon-espresso-machine">
+						<use xlink:href="icons.svg#espresso-machine"></use>
+					</svg>
+				</div>
+				<div class="icon-wrapper">
+					<svg class="svg-icon-portafilter">
+						<use xlink:href="icons.svg#portafilter"></use>
+					</svg>
+				</div>
+		</div>
+
+		<footer>
+			<p>Generated at Wed, 22 Jun 2016 00:19:54 GMT by <a href="https://github.com/axe312ger/responsive-svg-sprites" target="_blank">responsive-svg-sprites</a>.</p>
+		</footer>
+	</body>
+</html>

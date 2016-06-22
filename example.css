@@ -1,0 +1,54 @@
+html body {
+  padding: 2rem; }
+
+svg {
+  outline: 1px dashed red; }
+
+.icon-wrapper {
+  outline: 1px dotted green; }
+
+.first-example {
+  text-align: center; }
+  .first-example .svg-icon-aeropress {
+    height: 50px;
+    width: 50px; }
+  .first-example .svg-icon-americano {
+    height: 50px;
+    width: 50px; }
+  .first-example .svg-icon-coffee-grinder {
+    height: 50px;
+    width: 50px; }
+  .first-example .svg-icon-espresso-machine {
+    height: 50px;
+    width: 50px; }
+  .first-example .svg-icon-portafilter {
+    height: 50px;
+    width: 50px; }
+  .first-example > .icon-wrapper {
+    display: inline-block;
+    width: 19%; }
+
+.second-example {
+  text-align: center; }
+  .second-example .svg-icon-aeropress {
+    height: 100px;
+    width: 100px; }
+  .second-example .svg-icon-americano {
+    height: 100px;
+    width: 100px; }
+  .second-example .svg-icon-coffee-grinder {
+    height: 100px;
+    width: 100px; }
+  .second-example .svg-icon-espresso-machine {
+    height: 100px;
+    width: 100px; }
+  .second-example .svg-icon-portafilter {
+    height: 100px;
+    width: 100px; }
+  .second-example > .icon-wrapper {
+    display: inline-block;
+    width: 19%; }
+
+.third-example > .icon-wrapper {
+  display: inline-block;
+  width: 20%; }
