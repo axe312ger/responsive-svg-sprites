@@ -11,19 +11,19 @@ svg {
   text-align: center; }
   .first-example .svg-icon-aeropress {
     height: 50px;
-    width: 50px; }
+    width: 30.22222px; }
   .first-example .svg-icon-americano {
     height: 50px;
-    width: 50px; }
+    width: 56.81818px; }
   .first-example .svg-icon-coffee-grinder {
     height: 50px;
-    width: 50px; }
+    width: 37.2093px; }
   .first-example .svg-icon-espresso-machine {
     height: 50px;
     width: 50px; }
   .first-example .svg-icon-portafilter {
     height: 50px;
-    width: 50px; }
+    width: 118.18182px; }
   .first-example > .icon-wrapper {
     display: inline-block;
     width: 19%; }
@@ -32,23 +32,113 @@ svg {
   text-align: center; }
   .second-example .svg-icon-aeropress {
     height: 100px;
-    width: 100px; }
+    width: 60.44444px; }
   .second-example .svg-icon-americano {
     height: 100px;
-    width: 100px; }
+    width: 113.63636px; }
   .second-example .svg-icon-coffee-grinder {
     height: 100px;
-    width: 100px; }
+    width: 74.4186px; }
   .second-example .svg-icon-espresso-machine {
     height: 100px;
     width: 100px; }
   .second-example .svg-icon-portafilter {
     height: 100px;
-    width: 100px; }
+    width: 236.36364px; }
   .second-example > .icon-wrapper {
     display: inline-block;
     width: 19%; }
 
+.third-example .icon-wrapper-aeropress {
+  position: relative; }
+  .third-example .icon-wrapper-aeropress:before {
+    content: '';
+    display: block;
+    height: 0;
+    padding-bottom: 165.44118%; }
+  .third-example .icon-wrapper-aeropress > svg {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: auto; }
+
+.third-example .icon-wrapper-americano {
+  position: relative; }
+  .third-example .icon-wrapper-americano:before {
+    content: '';
+    display: block;
+    height: 0;
+    padding-bottom: 88%; }
+  .third-example .icon-wrapper-americano > svg {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: auto; }
+
+.third-example .icon-wrapper-coffee-grinder {
+  position: relative; }
+  .third-example .icon-wrapper-coffee-grinder:before {
+    content: '';
+    display: block;
+    height: 0;
+    padding-bottom: 134.375%; }
+  .third-example .icon-wrapper-coffee-grinder > svg {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: auto; }
+
+.third-example .icon-wrapper-espresso-machine {
+  position: relative; }
+  .third-example .icon-wrapper-espresso-machine:before {
+    content: '';
+    display: block;
+    height: 0;
+    padding-bottom: 100%; }
+  .third-example .icon-wrapper-espresso-machine > svg {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: auto; }
+
+.third-example .icon-wrapper-portafilter {
+  position: relative; }
+  .third-example .icon-wrapper-portafilter:before {
+    content: '';
+    display: block;
+    height: 0;
+    padding-bottom: 42.30769%; }
+  .third-example .icon-wrapper-portafilter > svg {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: auto; }
+
 .third-example > .icon-wrapper {
-  display: inline-block;
-  width: 20%; }
+  float: left;
+  width: 19%; }
+
+.third-example:after {
+  content: '';
+  display: block;
+  clear: both; }
