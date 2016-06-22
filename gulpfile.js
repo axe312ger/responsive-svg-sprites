@@ -1,6 +1,7 @@
 const gulp = require('gulp')
 const path = require('path')
 const svgSprite = require('gulp-svg-sprite')
+const sass = require('gulp-sass')
 
 const svgSpriteConfig = {
   // Note: dist is skipped for gulp svg sprite, thats why its missing here.
@@ -17,12 +18,17 @@ const svgSpriteConfig = {
       // The default for the dist of a mode is not empty, so lets fix this.
       dest: '.',
       sprite: 'icons.svg',
-      example: true, // @todo replace example with responsive one
+      // Generates a map with the icon aspect ratios
       render: {
         scss: {
-          // Generates a map with the icon aspect ratios
+          dest: 'svg-map.scss',
           template: path.join(__dirname, 'templates', 'svg-map.scss.handlebars')
         }
+      },
+      // This is the custom example. Might be handy for you or not. Your choice!
+      example: {
+        dest: 'index.html',
+        template: path.join(__dirname, 'templates', 'example.html.handlebars')
       }
     }
   },
@@ -71,7 +77,19 @@ const svgSpriteConfig = {
 
 gulp.task('default', ['generate'])
 
-gulp.task('generate', () => gulp.src('icons/*.svg')
+gulp.task('dev', ['generate', 'watch'])
+
+gulp.task('generate', ['sprite', 'stylesheets'])
+
+gulp.task('watch', ['generate'], () => gulp.watch(path.join('{templates,icons}', '**', '*'), ['generate']))
+
+// Make sure that sass runs after the svg-sprite generated the scss map.
+gulp.task('stylesheets', ['sprite'], () => gulp.src(path.join('templates', 'example.scss'))
+  .pipe(sass())
+  .pipe(gulp.dest('sprite'))
+)
+
+gulp.task('sprite', () => gulp.src(path.join('icons', '**', '*.svg'))
   .pipe(svgSprite(svgSpriteConfig))
   .pipe(gulp.dest('sprite'))
 )

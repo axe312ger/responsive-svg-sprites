@@ -18,7 +18,7 @@
 // Has to be applied to the wrapper of the svg.
 //
 // IMPORTANT: It will transform the dimensions, use a wrapper div to ensure
-// block context 
+// block context
 @mixin svg-icon-responsive-wrapper($name) {
   $gap: 100 / svg-icon-aspect-ratio($name);
   position: relative;
@@ -27,16 +27,17 @@
   &:before {
     content: '';
     display: block;
-  	height: 0;
-  	padding-bottom: #{$gap + "%"};
+    height: 0;
+    padding-bottom: #{$gap + "%"};
   }
 
-	// Align the svg to the new boundaries.
-	> svg {
-		position: absolute;
-		top: 0;
-		left: 0;
-		right: 0;
-		bottom: 0;
-	}
+  // Align the svg to the new boundaries.
+  > svg {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+  }
 }

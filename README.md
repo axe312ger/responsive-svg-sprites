@@ -1,7 +1,7 @@
 responsive-svg-sprites
 ===============
 
-> An example approach to successfully delivery responsive svgs to all browsers
+> An example approach to successfully delivery responsive svgs to all browsers - because it was really time to document this.
 
 > Work In Progress - Even this readme :)
 
@@ -10,7 +10,10 @@ responsive-svg-sprites
 * [x] add svgo config for proper minification
 * [ ] describe single parts and usage
 * [ ] describe why symbol and the other polyfill are used
-* [ ] add custom example file with responsive methods and proper polyfill
+* [x] add custom example file
+* [ ] add responsive methods to example
+* [ ] add proper ie polyfill to example
+* [ ] do cross browsers testing to proof this
 * [ ] create autopublish to github pages
 * [ ] EXTRA: add animations & colorings to the icons
 * [ ] EXTRA: postcss (just simply cssnext?) version
