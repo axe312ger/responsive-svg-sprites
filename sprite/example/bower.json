@@ -1,0 +1,22 @@
+{
+  "name": "responsive-svg-sprites-example",
+  "homepage": "https://github.com/axe312ger/responsive-svg-sprites",
+  "authors": [
+    "Benedikt Rötsch <info@benedikt-roetsch.de>"
+  ],
+  "description": "",
+  "main": "index.html",
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "svgxuse": "^1.1.17",
+    "normalize-css": "^4.1.1"
+  }
+}

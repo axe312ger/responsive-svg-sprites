@@ -3,6 +3,7 @@ const path = require('path')
 const svgSprite = require('gulp-svg-sprite')
 const sass = require('gulp-sass')
 const ghPages = require('gulp-gh-pages')
+const bower = require('gulp-bower')
 
 const svgSpriteConfig = {
   // Note: dist is skipped for gulp svg sprite, thats why its missing here.
@@ -28,7 +29,7 @@ const svgSpriteConfig = {
       },
       // This is the custom example. Might be handy for you or not. Your choice!
       example: {
-        dest: 'index.html',
+        dest: 'example/index.html',
         template: path.join(__dirname, 'templates', 'example.html.handlebars')
       }
     }
@@ -80,14 +81,14 @@ gulp.task('default', ['generate'])
 
 gulp.task('dev', ['generate', 'watch'])
 
-gulp.task('generate', ['sprite', 'stylesheets'])
+gulp.task('generate', ['sprite', 'stylesheets', 'prepare-example'])
 
 gulp.task('watch', ['generate'], () => gulp.watch(path.join('{templates,icons}', '**', '*'), ['generate']))
 
 // Make sure that sass runs after the svg-sprite generated the scss map.
 gulp.task('stylesheets', ['sprite'], () => gulp.src(path.join('templates', 'example.scss'))
   .pipe(sass())
-  .pipe(gulp.dest('sprite'))
+  .pipe(gulp.dest('sprite/example'))
 )
 
 gulp.task('sprite', () => gulp.src(path.join('icons', '**', '*.svg'))
@@ -95,6 +96,17 @@ gulp.task('sprite', () => gulp.src(path.join('icons', '**', '*.svg'))
   .pipe(gulp.dest('sprite'))
 )
 
-gulp.task('deploy', ['generate'], () => gulp.src('sprite/*.{html,css,svg}')
+gulp.task('prepare-example', ['example-copy-icon-sprite', 'example-install-bower'])
+
+gulp.task('example-install-bower', () => bower({
+  cwd: './sprite/example',
+  directory: './vendor'
+}))
+
+gulp.task('example-copy-icon-sprite', ['sprite'], () => gulp.src('sprite/icons.svg')
+  .pipe(gulp.dest('sprite/example'))
+)
+
+gulp.task('deploy', ['generate'], () => gulp.src('sprite/example/**/*')
   .pipe(ghPages())
 )

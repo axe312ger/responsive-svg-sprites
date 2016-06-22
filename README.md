@@ -12,7 +12,7 @@ responsive-svg-sprites
 * [ ] describe why symbol and the other polyfill are used
 * [x] add custom example file
 * [x] add responsive methods to example
-* [ ] add proper ie polyfill to example
+* [x] add proper ie polyfill to example
 * [ ] do cross browsers testing to proof this
 * [x] create autopublish to github pages
 * [ ] EXTRA: add animations & colorings to the icons

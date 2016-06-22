@@ -4,7 +4,7 @@
 		<meta charset="utf-8"/>
 		<meta http-equiv="X-UA-Compatible" content="IE=Edge"/>
 		<title>Responsive svg sprites with svg-sprite and SVGO</title>
-		<link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/4.1.1/normalize.min.css" type="text/css" rel="stylesheet"/>
+		<link href="vendor/normalize-css/normalize.css" type="text/css" rel="stylesheet"/>
 		<link href="example.css" type="text/css" rel="stylesheet"/>
 	</head>
 	<body>
@@ -21,7 +21,7 @@
 			{{#shapes}}
 				<div class="icon-wrapper">
 					<svg class="svg-icon-{{name}}">
-						<use xlink:href="{{{example}}}#{{name}}"></use>
+						<use xlink:href="icons.svg#{{name}}"></use>
 					</svg>
 				</div>
 			{{/shapes}}
@@ -33,7 +33,7 @@
 			{{#shapes}}
 				<div class="icon-wrapper">
 					<svg class="svg-icon-{{name}}">
-						<use xlink:href="{{{example}}}#{{name}}"></use>
+						<use xlink:href="icons.svg#{{name}}"></use>
 					</svg>
 				</div>
 			{{/shapes}}
@@ -45,7 +45,7 @@
 			{{#shapes}}
 				<div class="icon-wrapper icon-wrapper-{{name}}">
 					<svg class="svg-icon-{{name}}">
-						<use xlink:href="{{{example}}}#{{name}}"></use>
+						<use xlink:href="icons.svg#{{name}}"></use>
 					</svg>
 				</div>
 			{{/shapes}}
@@ -54,5 +54,8 @@
 		<footer>
 			<p>Generated at {{date}} by <a href="https://github.com/axe312ger/responsive-svg-sprites" target="_blank">responsive-svg-sprites</a>.</p>
 		</footer>
+
+		<!-- svgxuse is the proper fast alternative to svg4everybody -->
+		<script defer src="vendor/svgxuse/svgxuse.js"></script>
 	</body>
 </html>
