@@ -71,9 +71,31 @@ svg {
 // Example usage with as responsive icon
 .third-example {
 
+  .icon-wrapper-aeropress {
+    @include svg-icon-responsive-wrapper('aeropress');
+  }
+  .icon-wrapper-americano {
+    @include svg-icon-responsive-wrapper('americano');
+  }
+  .icon-wrapper-coffee-grinder {
+    @include svg-icon-responsive-wrapper('coffee-grinder');
+  }
+  .icon-wrapper-espresso-machine {
+    @include svg-icon-responsive-wrapper('espresso-machine');
+  }
+  .icon-wrapper-portafilter {
+    @include svg-icon-responsive-wrapper('portafilter');
+  }
+
   // Simple cross browser equal column grid.
   > .icon-wrapper {
-    display: inline-block;
-    width: 20%;
+    float: left;
+    width: 19%;
+  }
+
+  &:after {
+    content: '';
+    display: block;
+    clear: both;
   }
 }

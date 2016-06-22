@@ -39,5 +39,9 @@
     left: 0;
     right: 0;
     bottom: 0;
+
+    // Reset fixed dimensions for all browsers
+    width: 100%;
+    height: auto;
   }
 }

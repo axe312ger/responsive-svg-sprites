@@ -11,7 +11,7 @@ responsive-svg-sprites
 * [ ] describe single parts and usage
 * [ ] describe why symbol and the other polyfill are used
 * [x] add custom example file
-* [ ] add responsive methods to example
+* [x] add responsive methods to example
 * [ ] add proper ie polyfill to example
 * [ ] do cross browsers testing to proof this
 * [x] create autopublish to github pages

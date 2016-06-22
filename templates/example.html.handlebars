@@ -39,6 +39,18 @@
 			{{/shapes}}
 		</div>
 
+		<h2>Example #3 - responsive behaviour</h2>
+
+		<div class="third-example">
+			{{#shapes}}
+				<div class="icon-wrapper icon-wrapper-{{name}}">
+					<svg class="svg-icon-{{name}}">
+						<use xlink:href="{{{example}}}#{{name}}"></use>
+					</svg>
+				</div>
+			{{/shapes}}
+		</div>
+
 		<footer>
 			<p>Generated at {{date}} by <a href="https://github.com/axe312ger/responsive-svg-sprites" target="_blank">responsive-svg-sprites</a>.</p>
 		</footer>
