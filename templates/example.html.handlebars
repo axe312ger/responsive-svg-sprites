@@ -10,38 +10,76 @@
 	<body>
 		<h1>Responsive svg sprites</h1>
 
+		<p>
+			The sprites are embedded as reference using the
+			<a href="https://developer.mozilla.org/de/docs/Web/SVG/Element/use">&lt;use/&gt;</a>
+			tag. The single components within the external sprite image are accessed via an
+			<a href="https://developer.mozilla.org/en-US/docs/Web/SVG/Content_type#IRI">IRI reference</a>.
+		</p>
+
+		<p>
+			Since IE 9-11 and some old Android devices have trouble with external SVG
+			resources, the <a href="https://github.com/Keyamoon/svgxuse">svgxuse</a>
+			polyfill is used to fix this issue. Keyamoon's approach is way more performant
+			as <a href="https://github.com/jonathantneal/svg4everybody">svg4everybody</a>.
+			IE 8 and below are not supported.
+		</p>
+
+		<h2>Examples</h2>
+
+		<p>The following outlines are given to visualize the element boundaries.</p>
+
 		<ul>
-			<li>Red dashed border: SVG dimensions</li>
-			<li>Green dotted border: Wrapping div dimensions</li>
+			<li>Red dashed outline: SVG dimensions</li>
+			<li>Green dotted outline: Wrapping div dimensions</li>
 		</ul>
 
-		<h2>Example #1 - 50px fixed height</h2>
+		<main>
+			<section>
+				<h3>Example #1 - 1.5em fixed height</h3>
 
-		<div class="first-example">
-			{{#shapes}}
-				<div class="icon-wrapper">
-					<svg class="svg-icon-{{name}}">
-						<use xlink:href="icons.svg#{{name}}"></use>
-					</svg>
+				<div class="example first-example">
+					{{#shapes}}
+						<div class="icon-wrapper">
+							<svg class="svg-icon-{{name}}">
+								<use xlink:href="icons.svg#{{name}}"></use>
+							</svg>
+						</div>
+					{{/shapes}}
 				</div>
-			{{/shapes}}
-		</div>
 
-		<h2>Example #2 - 100px fixed height</h2>
+				<h3>Example #2 - 50px fixed height</h3>
 
-		<div class="second-example">
-			{{#shapes}}
-				<div class="icon-wrapper">
-					<svg class="svg-icon-{{name}}">
-						<use xlink:href="icons.svg#{{name}}"></use>
-					</svg>
+				<div class="example second-example">
+					{{#shapes}}
+						<div class="icon-wrapper">
+							<svg class="svg-icon-{{name}}">
+								<use xlink:href="icons.svg#{{name}}"></use>
+							</svg>
+						</div>
+					{{/shapes}}
 				</div>
-			{{/shapes}}
-		</div>
+			</section>
+			<section>
+				<h3>Example #3 - responsive behaviour</h3>
 
-		<h2>Example #3 - responsive behaviour</h2>
+				<div class="example third-example">
+					{{#shapes}}
+						<div class="icon-wrapper icon-wrapper-{{name}}">
+							<svg class="svg-icon-{{name}}">
+								<use xlink:href="icons.svg#{{name}}"></use>
+							</svg>
+						</div>
+					{{/shapes}}
+				</div>
+			</section>
+		</main>
 
-		<div class="third-example">
+		<h2>SVG default behavior of your browser</h2>
+
+		<p>No width and height set, no css applied. Usually this will result in 300×150px image.</p>
+
+		<div class="example">
 			{{#shapes}}
 				<div class="icon-wrapper icon-wrapper-{{name}}">
 					<svg class="svg-icon-{{name}}">

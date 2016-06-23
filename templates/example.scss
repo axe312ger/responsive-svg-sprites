@@ -1,70 +1,47 @@
-// All you need is to include the mixins and the svg map with the aspect ratios
+// All you need is to include the mixins and the generated svg map with the aspect ratios
 @import '../sprite/svg-map.scss';
 @import 'mixins';
 
-html body {
-  padding: 2rem;
-}
+$first-size: 1.5em;
+$second-size: 50px;
 
-svg {
-  outline: 1px dashed red;
-}
-
-.icon-wrapper {
-  outline: 1px dotted green;
-}
-
-// Example usage with fixed 50px height
 .first-example {
   text-align: center;
 
   .svg-icon-aeropress {
-    @include svg-icon-dimensions-by-height('aeropress', 50px);
+    @include svg-icon-dimensions-by-height('aeropress', $first-size);
   }
   .svg-icon-americano {
-    @include svg-icon-dimensions-by-height('americano', 50px);
+    @include svg-icon-dimensions-by-height('americano', $first-size);
   }
   .svg-icon-coffee-grinder {
-    @include svg-icon-dimensions-by-height('coffee-grinder', 50px);
+    @include svg-icon-dimensions-by-height('coffee-grinder', $first-size);
   }
   .svg-icon-espresso-machine {
-    @include svg-icon-dimensions-by-height('espresso-machine', 50px);
+    @include svg-icon-dimensions-by-height('espresso-machine', $first-size);
   }
   .svg-icon-portafilter {
-    @include svg-icon-dimensions-by-height('portafilter', 50px);
-  }
-
-  // Simple cross browser equal column grid.
-  > .icon-wrapper {
-    display: inline-block;
-    width: 19%;
+    @include svg-icon-dimensions-by-height('portafilter', $first-size);
   }
 }
 
-// Simple example with 100px height @todo change to 50px width
 .second-example {
   text-align: center;
 
   .svg-icon-aeropress {
-    @include svg-icon-dimensions-by-height('aeropress', 100px);
+    @include svg-icon-dimensions-by-height('aeropress', $second-size);
   }
   .svg-icon-americano {
-    @include svg-icon-dimensions-by-height('americano', 100px);
+    @include svg-icon-dimensions-by-height('americano', $second-size);
   }
   .svg-icon-coffee-grinder {
-    @include svg-icon-dimensions-by-height('coffee-grinder', 100px);
+    @include svg-icon-dimensions-by-height('coffee-grinder', $second-size);
   }
   .svg-icon-espresso-machine {
-    @include svg-icon-dimensions-by-height('espresso-machine', 100px);
+    @include svg-icon-dimensions-by-height('espresso-machine', $second-size);
   }
   .svg-icon-portafilter {
-    @include svg-icon-dimensions-by-height('portafilter', 100px);
-  }
-
-  // Simple cross browser equal column grid.
-  > .icon-wrapper {
-    display: inline-block;
-    width: 19%;
+    @include svg-icon-dimensions-by-height('portafilter', $second-size);
   }
 }
 
@@ -86,7 +63,38 @@ svg {
   .icon-wrapper-portafilter {
     @include svg-icon-responsive-wrapper('portafilter');
   }
+}
 
+// Coloring
+svg {
+  outline: 1px dashed red;
+}
+
+.icon-wrapper {
+  outline: 1px dotted green;
+}
+
+// Layout
+html body {
+  padding: 0 2rem 2rem;
+}
+
+main {
+  @media(min-width: 700px) {
+    section {
+      float: left;
+      width: 50%;
+    }
+
+    &:after {
+      content: '';
+      display: block;
+      clear: both;
+    }
+  }
+}
+
+.example {
   // Simple cross browser equal column grid.
   > .icon-wrapper {
     float: left;
