@@ -40,8 +40,8 @@
     right: 0;
     bottom: 0;
 
-    // Reset fixed dimensions for all browsers
+    // Reset any set dimensions to tell all browsers to fill our aspect ratio
     width: 100%;
-    height: auto;
+    height: 100%;
   }
 }
