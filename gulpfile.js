@@ -4,6 +4,7 @@ const svgSprite = require('gulp-svg-sprite')
 const sass = require('gulp-sass')
 const ghPages = require('gulp-gh-pages')
 const bower = require('gulp-bower')
+const spawn = require('child_process').spawn
 
 const svgSpriteConfig = {
   // Note: dist is skipped for gulp svg sprite, thats why its missing here.
@@ -86,7 +87,21 @@ gulp.task('dev', ['generate', 'watch'])
 
 gulp.task('generate', ['sprite', 'stylesheets', 'prepare-example'])
 
-gulp.task('watch', ['generate'], () => gulp.watch(path.join('{templates,icons}', '**', '*'), ['generate']))
+gulp.task('watch', ['watchAssets', 'watchGulpfile'])
+
+gulp.task('watchAssets', ['generate'], () => gulp
+  .watch(path.join('{templates,icons}', '**', '*'), ['generate'])
+)
+
+gulp.task('watchGulpfile', ['generate'], () => gulp
+  .watch('gulpfile.js', ['restart'])
+)
+
+gulp.task('restart', () => {
+  process.argv.shift()
+  spawn(process.argv.shift(), process.argv, {stdio: 'inherit'})
+  process.exit()
+})
 
 // Make sure that sass runs after the svg-sprite generated the scss map.
 gulp.task('stylesheets', ['sprite'], () => gulp.src(path.join('templates', 'example.scss'))
