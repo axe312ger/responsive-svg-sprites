@@ -1,5 +1,29 @@
+.svg-icon-aeropress {
+  color: #468966; }
+
+.svg-icon-americano {
+  color: #FFF0A5; }
+
+.svg-icon-coffee-grinder {
+  color: #FFB03B; }
+
+.svg-icon-espresso-machine {
+  color: #B64926; }
+
+.svg-icon-portafilter {
+  color: #8E2800; }
+
 .first-example {
   text-align: center; }
+  .first-example .icon-wrapper > * {
+    display: inline-block;
+    vertical-align: middle; }
+  .first-example .icon-wrapper span {
+    max-width: 100%;
+    font-size: 0.8em;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis; }
   .first-example .svg-icon-aeropress {
     height: 1.5em;
     width: 0.90667em; }
