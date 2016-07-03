@@ -13,7 +13,7 @@
   "dependencies": {
     "gulp-bower": "0.0.13",
     "gulp-sass": "^2.3.2",
-    "gulp-svg-sprite": "^1.3.1"
+    "gulp-svg-sprite": "^1.3.3"
   },
   "devDependencies": {
     "eslint": "^2.13.1",
@@ -21,5 +21,8 @@
     "eslint-plugin-promise": "^1.3.2",
     "eslint-plugin-standard": "^1.3.2",
     "gulp-gh-pages": "^0.5.4"
+  },
+  "optionalDependencies": {
+    "gulp": "^3.9.1"
   }
 }
