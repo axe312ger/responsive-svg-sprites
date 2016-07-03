@@ -25,6 +25,23 @@ $colors: #468966 #FFF0A5 #FFB03B #B64926 #8E2800;
 .first-example {
   text-align: center;
 
+  .icon-wrapper {
+    & > * {
+      display: inline-block;
+      vertical-align: middle;
+    }
+
+    span {
+      max-width: 100%;
+      font-size: 0.8em;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+  }
+
+
+
   .svg-icon-aeropress {
     @include svg-icon-dimensions-by-height('aeropress', $first-size);
   }
