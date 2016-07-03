@@ -4,6 +4,23 @@
 
 $first-size: 1.5em;
 $second-size: 50px;
+$colors: #468966 #FFF0A5 #FFB03B #B64926 #8E2800;
+
+.svg-icon-aeropress {
+  color: nth($colors, 1);
+}
+.svg-icon-americano {
+  color: nth($colors, 2);
+}
+.svg-icon-coffee-grinder {
+  color: nth($colors, 3);
+}
+.svg-icon-espresso-machine {
+  color: nth($colors, 4);
+}
+.svg-icon-portafilter {
+  color: nth($colors, 5);
+}
 
 .first-example {
   text-align: center;

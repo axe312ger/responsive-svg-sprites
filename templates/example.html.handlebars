@@ -79,15 +79,11 @@
 
 		<p>No width and height set, no css applied. Usually this will result in 300×150px image.</p>
 
-		<div class="example">
-			{{#shapes}}
-				<div class="icon-wrapper icon-wrapper-{{name}}">
-					<svg class="svg-icon-{{name}}">
-						<use xlink:href="icons.svg#{{name}}"></use>
-					</svg>
-				</div>
-			{{/shapes}}
-		</div>
+		{{#shapes}}
+			<svg class="svg-icon-{{name}}">
+				<use xlink:href="icons.svg#{{name}}"></use>
+			</svg>
+		{{/shapes}}
 
 		<footer>
 			<p>Generated at {{date}} by <a href="https://github.com/axe312ger/responsive-svg-sprites" target="_blank">responsive-svg-sprites</a>.</p>
